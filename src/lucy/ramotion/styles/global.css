@@ -1,0 +1,23 @@
+@font-face {
+  font-family: Graphik Web;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://res.cloudinary.com/whil/raw/upload/v1677369271/Graphik-Regular-Web_dhdhvu.woff");
+}
+
+@font-face {
+  font-family: Graphik Web;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 500;
+  src: url("https://res.cloudinary.com/whil/raw/upload/v1677369272/Graphik-Medium-Web_jt6nwf.woff2");
+}
+
+@font-face {
+  font-family: Graphik Web;
+  font-weight: 700;
+  font-stretch: normal;
+  font-style: normal;
+  src: url("https://res.cloudinary.com/whil/raw/upload/v1677369271/Graphik-Bold-Web_gwe6cx.woff");
+}
