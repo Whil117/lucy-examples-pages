@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import RoutesConfig from "../config.types";
 
 const RamotionRoutes = dynamic(() => import("."), {
-  ssr: false,
+  ssr: true,
   loading: () => <AtomLoader type="fullscreen" colorLoad="#0073fc" isLoading />,
 });
 

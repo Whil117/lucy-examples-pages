@@ -53,7 +53,7 @@ const HomeLandingRamotion: FC<Props> = (props) => {
             width: 100%;
           `}
         >
-          <svg height="24" width="15" fill="currentColor">
+          <svg height="30" width="23" fill="currentColor">
             <path
               d="M7.54601227,0 L7.54601227,0 L0,0 L0,24 L15,24
                             L9.20245399,14.6769231 C12.5153374,13.8461538 15,10.9846154 15,7.38461538 L15,7.38461538 L15,7.38461538 C15,3.32307692
@@ -67,6 +67,11 @@ const HomeLandingRamotion: FC<Props> = (props) => {
             justifyContent="space-between"
             flexDirection="row"
             gap="25px"
+            customCSS={() => css`
+              @media (max-width: 980px) {
+                display: none;
+              }
+            `}
           >
             {HeaderOptions?.map((item) => (
               <AtomText
@@ -89,6 +94,7 @@ const HomeLandingRamotion: FC<Props> = (props) => {
           `}
         >
           <AtomText
+            maxWidth="60%"
             customCSS={() => css`
               font-family: Graphik Web;
               font-weight: 700;
@@ -96,8 +102,11 @@ const HomeLandingRamotion: FC<Props> = (props) => {
               font-weight: 700;
               letter-spacing: -2px;
               line-height: 86px;
+              @media (max-width: 980px) {
+                width: auto;
+                max-width: max-content;
+              }
             `}
-            width="60%"
           >
             Digital product and brand agency
           </AtomText>
@@ -108,7 +117,15 @@ const HomeLandingRamotion: FC<Props> = (props) => {
             background-color: #1414143d;
           `}
         ></AtomWrapper>
-        <AtomWrapper flexDirection="row" gap="25px">
+        <AtomWrapper
+          flexDirection="row"
+          gap="25px"
+          customCSS={() => css`
+            @media (max-width: 980px) {
+              flex-wrap: wrap;
+            }
+          `}
+        >
           <AtomWrapper gap="10px">
             <AtomText
               customCSS={() => css`
@@ -149,8 +166,12 @@ const HomeLandingRamotion: FC<Props> = (props) => {
           <AtomWrapper
             customCSS={() => css`
               display: grid;
-              grid-template-columns: repeat(3, 1fr);
-              grid-template-rows: repeat(5, 1fr);
+              grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+              @media (max-width: 980px) {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+              }
             `}
           >
             {companiesLogosTable?.map((item) => (
@@ -158,6 +179,10 @@ const HomeLandingRamotion: FC<Props> = (props) => {
                 key={item.id}
                 customCSS={() => css`
                   border: 1px solid #dbdbdb80;
+                  @media (max-width: 980px) {
+                    flex-basis: 30%;
+                    flex-grow: 1;
+                  }
                 `}
               >
                 <AtomIcon
@@ -176,7 +201,15 @@ const HomeLandingRamotion: FC<Props> = (props) => {
             background-color: #1414143d;
           `}
         ></AtomWrapper>
-        <AtomWrapper flexDirection="row" gap="10px">
+        <AtomWrapper
+          flexDirection="row"
+          gap="10px"
+          customCSS={() => css`
+            @media (max-width: 980px) {
+              flex-wrap: wrap;
+            }
+          `}
+        >
           {CaseStudy?.map((item) => (
             <AtomWrapper key={item.label} gap="10px">
               <AtomIcon src={item.logo} width="140px" color="default" />
@@ -227,7 +260,14 @@ const HomeLandingRamotion: FC<Props> = (props) => {
             background-color: #1414143d;
           `}
         ></AtomWrapper>
-        <AtomWrapper flexDirection="row">
+        <AtomWrapper
+          flexDirection="row"
+          customCSS={() => css`
+            @media (max-width: 980px) {
+              flex-wrap: wrap;
+            }
+          `}
+        >
           <AtomWrapper>
             <AtomText
               customCSS={() => css`
@@ -268,8 +308,12 @@ const HomeLandingRamotion: FC<Props> = (props) => {
           <AtomWrapper
             customCSS={() => css`
               display: grid;
-              grid-template-columns: repeat(3, 1fr);
-              grid-template-rows: repeat(5, 1fr);
+              grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+              @media (max-width: 980px) {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+              }
             `}
           >
             {SMBSCOMPANIES?.map((item) => (
@@ -277,6 +321,10 @@ const HomeLandingRamotion: FC<Props> = (props) => {
                 key={item}
                 customCSS={() => css`
                   border: 1px solid #dbdbdb80;
+                  @media (max-width: 980px) {
+                    flex-basis: 30%;
+                    flex-grow: 1;
+                  }
                 `}
               >
                 <AtomIcon
@@ -295,7 +343,15 @@ const HomeLandingRamotion: FC<Props> = (props) => {
             background-color: #1414143d;
           `}
         ></AtomWrapper>
-        <AtomWrapper flexDirection="row" gap="10px">
+        <AtomWrapper
+          flexDirection="row"
+          gap="10px"
+          customCSS={() => css`
+            @media (max-width: 980px) {
+              flex-wrap: wrap;
+            }
+          `}
+        >
           {newCaseStudy?.map((item) => (
             <AtomWrapper key={item.label} gap="10px">
               <AtomIcon src={item.logo} width="140px" color="default" />
@@ -378,7 +434,9 @@ const HomeLandingRamotion: FC<Props> = (props) => {
         <AtomWrapper
           flexDirection="row"
           customCSS={() => css`
-            /* min-height: 320px; */
+            @media (max-width: 980px) {
+              flex-wrap: wrap;
+            }
           `}
         >
           {footerCOlumns?.map((item) => (
