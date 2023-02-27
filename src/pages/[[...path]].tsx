@@ -68,8 +68,6 @@ const DynamicPage: FC<Props> = ({ hostname }) => {
             `}
             onChange={(e) => {
               setProjectId(e.target.value);
-              // localStorage.setItem("devPath", e.target.value);
-              // setId(e.target.value);
               router.push(`/`);
             }}
           />

@@ -9,7 +9,7 @@ const RamotionRoutes = dynamic(() => import("."), {
 
 const RamotionConfig: RoutesConfig = {
   name: "Ramotion",
-  prod: "ramotion.lucy.nxtjs",
+  prod: "lucy-examples-ramotion",
   dev: "9b4b96e3-6a69-4777-8d5b-f583a365ee43",
   routes: RamotionRoutes,
 };
