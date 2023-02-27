@@ -9,7 +9,7 @@ const RamotionRoutes = dynamic(() => import("."), {
 
 const RamotionConfig: RoutesConfig = {
   name: "Ramotion",
-  prod: "lucy-examples-pages-wmkc1c991-whil.vercel.app",
+  prod: "lucy-examples-ramotion.vercel.app",
   dev: "9b4b96e3-6a69-4777-8d5b-f583a365ee43",
   routes: RamotionRoutes,
 };
