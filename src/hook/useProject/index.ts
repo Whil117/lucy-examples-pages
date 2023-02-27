@@ -9,6 +9,11 @@ import { useMemo } from "react";
 
 const allRoutes = [RamotionConfig, WhilConfig];
 
+const onlyWithRoute = {
+  [RamotionConfig.prod]: RamotionConfig,
+  [WhilConfig.prod]: WhilConfig,
+};
+
 type RouterWithComponents = NextRouter & {
   components: {
     ["/[[...path]]"]: {
@@ -31,6 +36,16 @@ type UseProjectProps = {
   AllRoutes: RoutesConfig[];
 };
 
+const chooseTypeProject = (
+  isHostLocal: boolean,
+  projectId: string,
+  hostname: string
+) => {
+  return isHostLocal
+    ? allRoutes?.find((item) => [item.prod, item.dev]?.includes(projectId))
+    : onlyWithRoute?.[hostname];
+};
+
 const useProject = (): UseProjectProps => {
   const router = useRouter() as RouterWithComponents;
 
@@ -40,11 +55,9 @@ const useProject = (): UseProjectProps => {
 
     const hostname = pageProps?.hostname;
     const path = pageProps?.path;
-    const isHost = isLocalOrURL?.includes(hostname);
 
-    const findProject = allRoutes?.find((item) =>
-      [item.prod, item.dev]?.includes(isHost ? projectId : hostname)
-    );
+    const isHost = isLocalOrURL?.includes(hostname);
+    const findProject = chooseTypeProject(isHost, projectId, hostname);
 
     return {
       project: findProject as RoutesConfig,

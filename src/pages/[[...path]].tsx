@@ -24,7 +24,7 @@ export const ProjectIdAtom = atomWithStorage(
   "9b4b96e3-6a69-4777-8d5b-f583a365ee43"
 );
 
-const BrowserRoutesStatic = dynamic(() => import("@/components/@routes"), {
+const BrowserRoutesStatic = dynamic(() => import("@/lucy/routes.lucy"), {
   ssr: false,
   loading: () => <AtomLoader type="fullscreen" colorLoad="#202020" isLoading />,
 });
