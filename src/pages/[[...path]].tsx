@@ -3,7 +3,7 @@ import useProject from "@/hook/useProject";
 import { css } from "@emotion/react";
 import { useAtom } from "jotai";
 import { atomWithStorage } from "jotai/utils";
-import { AtomInput, AtomLoader, AtomWrapper } from "lucy-nxtjs";
+import { AtomButton, AtomInput, AtomLoader, AtomWrapper } from "lucy-nxtjs";
 import { GetServerSideProps } from "next";
 import dynamic from "next/dynamic";
 import { FC, ReactNode } from "react";
@@ -46,6 +46,7 @@ const DynamicPage: FC<Props> = ({ hostname }) => {
           maxWidth="max-content"
           customCSS={() => css`
             flex-direction: row;
+            align-items: center;
             position: fixed;
             right: 20px;
             bottom: 10px;
@@ -75,6 +76,24 @@ const DynamicPage: FC<Props> = ({ hostname }) => {
               router.push(`/`);
             }}
           />
+          <AtomButton
+            backgroundColor="#0073fc"
+            customCSS={() => css`
+              font-family: Graphik Web;
+              font-weight: 600;
+              font-size: 11px;
+              padding: 15px;
+            `}
+            onClick={() => {
+              const findUrl = AllRoutes?.find((item) =>
+                [item.dev, item.prod].includes(projectId)
+              );
+
+              window.open(`https://${findUrl?.prod}/`, "_blank");
+            }}
+          >
+            Website
+          </AtomButton>
         </AtomWrapper>
       )}
     </AtomWrapper>
