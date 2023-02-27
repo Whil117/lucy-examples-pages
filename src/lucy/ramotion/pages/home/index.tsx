@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import { css } from "@emotion/react";
 import { AtomIcon, AtomText, AtomWrapper } from "lucy-nxtjs";
+import { useRouter } from "next/router";
 import { FC, ReactNode } from "react";
 
 type Props = {
@@ -36,6 +37,7 @@ const HeaderOptions = [
 ];
 
 const HomeLandingRamotion: FC<Props> = (props) => {
+  const router = useRouter();
   return (
     <>
       <AtomWrapper
