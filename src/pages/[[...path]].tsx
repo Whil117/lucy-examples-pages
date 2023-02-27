@@ -1,7 +1,8 @@
 /* eslint-disable @next/next/no-css-tags */
 import useProject from "@/hook/useProject";
 import { css } from "@emotion/react";
-import { atom, useAtom } from "jotai";
+import { useAtom } from "jotai";
+import { atomWithStorage } from "jotai/utils";
 import { AtomInput, AtomLoader, AtomWrapper } from "lucy-nxtjs";
 import { GetServerSideProps } from "next";
 import dynamic from "next/dynamic";
@@ -18,7 +19,10 @@ export const isLocalOrURL = [
   "lucy-examples-pages.vercel.app",
 ];
 
-export const ProjectIdAtom = atom("9b4b96e3-6a69-4777-8d5b-f583a365ee43");
+export const ProjectIdAtom = atomWithStorage(
+  "devProjectId",
+  "9b4b96e3-6a69-4777-8d5b-f583a365ee43"
+);
 
 const BrowserRoutesStatic = dynamic(() => import("@/components/@routes"), {
   ssr: false,
