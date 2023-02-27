@@ -10,8 +10,7 @@ const LayoutRamotion: FC<Props> = ({ children }) => {
   return (
     <AtomWrapper
       flexDirection="row"
-      justifyContent="space-between"
-      alignItems="center"
+      justifyContent="center"
       maxWidth="1440px"
       padding="0px 90px"
       flexWrap="wrap"

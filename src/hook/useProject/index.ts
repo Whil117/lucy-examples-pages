@@ -1,18 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import RoutesConfig from "@/lucy/config.types";
-import RamotionConfig from "@/lucy/ramotion/routes";
-import WhilConfig from "@/lucy/whil/routes";
+import { allRoutes, onlyWithRoute } from "@/lucy/main.routes";
 import { isLocalOrURL, ProjectIdAtom } from "@/pages/[[...path]]";
 import { useAtomValue } from "jotai";
 import { NextRouter, useRouter } from "next/router";
 import { useMemo } from "react";
-
-const allRoutes = [RamotionConfig, WhilConfig];
-
-const onlyWithRoute = {
-  [RamotionConfig.prod]: RamotionConfig,
-  [WhilConfig.prod]: WhilConfig,
-};
 
 type RouterWithComponents = NextRouter & {
   components: {

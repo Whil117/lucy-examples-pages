@@ -37,8 +37,8 @@ const DynamicPage: FC<Props> = ({ hostname }) => {
     <AtomWrapper
       backgroundColor="#fafbfc"
       minHeight="100vh"
-      justifyContent="center"
-      alignItems="center"
+      justifyContent="flex-start"
+      alignItems="flex-start"
     >
       <BrowserRoutesStatic />
       {isLocalOrURL.includes(hostname ?? "") && (
