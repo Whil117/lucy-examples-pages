@@ -29,18 +29,18 @@ const ModuleHeaderShop: FC<Props> = (props) => {
   return (
     <AtomWrapper>
       <AtomWrapper
-        backgroundColor="green"
+        backgroundColor="#003d29"
         padding="10px 15px"
         flexDirection="row"
         justifyContent="space-between"
       >
-        <AtomText fontFamily="Rubik" color="white">
+        <AtomText fontFamily="Inter" color="white">
           +001234567890
         </AtomText>
-        <AtomText fontFamily="Rubik" color="white">
+        <AtomText fontFamily="Inter" color="white">
           Get 50% off on Selected items | Shop now
         </AtomText>
-        <AtomText fontFamily="Rubik" color="white">
+        <AtomText fontFamily="Inter" color="white">
           Eng
         </AtomText>
       </AtomWrapper>
@@ -53,32 +53,50 @@ const ModuleHeaderShop: FC<Props> = (props) => {
         alignItems="center"
         justifyContent="space-around"
       >
-        <AtomWrapper width="auto">
-          <AtomImage
-            src="https://res.cloudinary.com/whil/image/upload/v1677475419/dxnW70Dk_4x_kab6mh.jpg"
-            width="120px"
+        <AtomWrapper
+          flexDirection="row"
+          alignItems="center"
+          justifyContent="space-between"
+          maxWidth="1440px"
+          padding="0px 90px"
+        >
+          <AtomWrapper width="auto">
+            <AtomImage
+              src="https://res.cloudinary.com/whil/image/upload/v1677475419/dxnW70Dk_4x_kab6mh.jpg"
+              width="120px"
+              height="auto"
+            />
+          </AtomWrapper>
+          <AtomWrapper
+            flexDirection="row"
+            width="auto"
             height="auto"
-          />
-        </AtomWrapper>
-        <AtomWrapper flexDirection="row" width="auto" height="auto" gap="25px">
-          {Links?.map((item) => (
-            <AtomText key={item.id} fontFamily="Rubik">
-              {item.label}
-            </AtomText>
-          ))}
-        </AtomWrapper>
-        <AtomWrapper width="auto">
-          <AtomInput
-            type="text"
-            placeholder="Search Product"
-            customCSS={() => css`
-              width: 100%;
-            `}
-          />
-        </AtomWrapper>
-        <AtomWrapper flexDirection="row" width="auto" height="auto" gap="25px">
-          <AtomText fontFamily="Rubik">Account</AtomText>
-          <AtomText fontFamily="Rubik">Cart</AtomText>
+            gap="25px"
+          >
+            {Links?.map((item) => (
+              <AtomText key={item.id} fontFamily="Inter">
+                {item.label}
+              </AtomText>
+            ))}
+          </AtomWrapper>
+          <AtomWrapper width="auto">
+            <AtomInput
+              type="text"
+              placeholder="Search Product"
+              customCSS={() => css`
+                width: 100%;
+              `}
+            />
+          </AtomWrapper>
+          <AtomWrapper
+            flexDirection="row"
+            width="auto"
+            height="auto"
+            gap="25px"
+          >
+            <AtomText fontFamily="Inter">Account</AtomText>
+            <AtomText fontFamily="Inter">Cart</AtomText>
+          </AtomWrapper>
         </AtomWrapper>
       </AtomWrapper>
     </AtomWrapper>
