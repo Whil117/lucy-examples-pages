@@ -16,9 +16,6 @@ const LayoutShop: FC<Props> = ({ children }) => {
         justify-content: flex-start;
         align-items: flex-start;
         background-color: #fbfbfb;
-        @media (max-width: 768px) {
-          padding: 0 30px;
-        }
       `}
     >
       <ModuleHeaderShop />

@@ -2,6 +2,7 @@ import { css } from "@emotion/react";
 import { AtomButton, AtomImage, AtomText, AtomWrapper } from "lucy-nxtjs";
 import { FC, ReactNode } from "react";
 import { useQuery } from "react-query";
+import ModuleProducts from "../../components/@modules/ModuleProducts";
 
 type Props = {
   children?: ReactNode;
@@ -150,8 +151,11 @@ const HomeShopPage: FC<Props> = (props) => {
               customCSS={() => css`
                 position: relative;
                 background-color: #f5f6f6;
-                display: grid;
-                grid-template-columns: 120px 1fr;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+                gap: 20px;
               `}
             >
               <AtomImage
@@ -166,16 +170,13 @@ const HomeShopPage: FC<Props> = (props) => {
                   }
                 `}
               />
-              <AtomWrapper width="auto">
+              <AtomWrapper justifyContent="space-between">
                 <AtomText
                   customCSS={() => css`
                     font-family: Inter;
                     font-weight: bold;
-                    font-size: 22px;
-                    position: absolute;
+                    font-size: 18px;
                     color: black;
-                    top: 0;
-                    padding: 20px;
                   `}
                 >
                   {item.label}
@@ -183,7 +184,7 @@ const HomeShopPage: FC<Props> = (props) => {
                 <AtomText
                   customCSS={() => css`
                     font-family: Inter;
-                    font-size: 16px;
+                    font-size: 14px;
                     color: black;
                   `}
                 >
@@ -194,6 +195,7 @@ const HomeShopPage: FC<Props> = (props) => {
           ))}
         </AtomWrapper>
       </AtomWrapper>
+      <ModuleProducts />
     </AtomWrapper>
   );
 };
