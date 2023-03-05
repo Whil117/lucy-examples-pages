@@ -1,0 +1,32 @@
+[
+  {
+    "id": "001aeb09-a030-4400-bb63-51298b42c97d",
+    "label": "Furniture",
+    "image": "https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e8c4e570738029a725e686_Furniture-min.png"
+  },
+  {
+    "id": "d12890b4-91ec-4319-aa4d-7bb91d15843a",
+    "label": "Hand Bag",
+    "image": "https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e8c4e52d6553668075697e_hand%20bag-min.png"
+  },
+  {
+    "id": "cba66760-8a08-492a-9d1b-d14ee40ad2d4",
+    "label": "Books",
+    "image": "https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e8c4e460afc22b7ea53520_books-min.png"
+  },
+  {
+    "id": "f4875636-44ea-4706-999c-6dd0eb8ede72",
+    "label": "Tech",
+    "image": "https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e8c4e754ac2e32897cb53b_tech-min.png"
+  },
+  {
+    "id": "ff3b605d-92dd-4648-9554-840e0242b9bb",
+    "label": "Sneakers",
+    "image": "https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e8c4e64b769118272f244f_sneakers-min.png "
+  },
+  {
+    "id": "",
+    "label": "Travel",
+    "image": "https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e8c4e71eb4ad6d07e7568f_travel-min.png"
+  }
+]

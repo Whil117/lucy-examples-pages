@@ -9,7 +9,7 @@ specifiers:
   eslint: 8.34.0
   eslint-config-next: 13.2.1
   jotai: ^2.0.2
-  lucy-nxtjs: ^0.0.22
+  lucy-nxtjs: ^0.0.23
   next: 13.2.1
   react: 18.2.0
   react-cool-form: ^0.4.1
@@ -29,7 +29,7 @@ dependencies:
   eslint: 8.34.0
   eslint-config-next: 13.2.1_7kw3g6rralp5ps6mg3uyzz6azm
   jotai: 2.0.2_react@18.2.0
-  lucy-nxtjs: 0.0.22_4yd2h3tm36ludzmv2qfsi4xwxq
+  lucy-nxtjs: 0.0.23_4yd2h3tm36ludzmv2qfsi4xwxq
   next: 13.2.1_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-cool-form: 0.4.1_react@18.2.0
@@ -3030,8 +3030,8 @@ packages:
       yallist: 4.0.0
     dev: false
 
-  /lucy-nxtjs/0.0.22_4yd2h3tm36ludzmv2qfsi4xwxq:
-    resolution: {integrity: sha512-mS03RkN5ZUF3gE+GiB+iOWGlyJ6hOG4X0aBTvEJDztGXe1uuVdhCIVKGTCFaE2JMzEhVzrXn6/7DyP7m8JZVdQ==}
+  /lucy-nxtjs/0.0.23_4yd2h3tm36ludzmv2qfsi4xwxq:
+    resolution: {integrity: sha512-DIuP0XbjczWedkxhldB8X73ZVDum+kknrX75BL9QlCDJaHpkFTOP8S0n32t4+z2JX2JxJN3kRbS2eQx6g01fQw==}
     peerDependencies:
       '@emotion/react': ^11.10.5
       '@emotion/styled': ^11.10.5

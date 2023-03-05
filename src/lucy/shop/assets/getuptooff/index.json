@@ -1,0 +1,30 @@
+[
+    {
+        "id": "eiasdfsadf",
+        "price": 100,
+        "background": "#f2e4d9",
+        "color": "#cb9917",
+        "url": "https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e8c4e6cd367817e964f756_sofa-min.png"
+    },
+    {
+        "id": "i3mkd",
+        "price": 29,
+        "color": "#961f1f",
+        "background": "#f9dcdc",
+        "url": "https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e8c4e4e006822af104db61_book-min.png"
+    },
+    {
+        "id": "idnfd",
+        "price": 67,
+        "color": "#94623c",
+        "background": "#f2e4d9",
+        "url": "https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e8c4e61a7c20076aec5fe7_shirt-min.png"
+    },
+    {
+        "id": "k33sasd",
+        "price": 59,
+        "color": "#003d29",
+        "background": "#d2f7ec",
+        "url": "https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e8c4e53f7127592743f6be_bug%20%26%20book-min.png"
+    }
+]

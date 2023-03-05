@@ -1,5 +1,11 @@
 import { css } from "@emotion/react";
-import { AtomButton, AtomImage, AtomText, AtomWrapper } from "lucy-nxtjs";
+import {
+  AtomButton,
+  AtomImage,
+  AtomText,
+  AtomWrapper,
+  NumberWithCommas,
+} from "lucy-nxtjs";
 import { FC, memo, ReactNode } from "react";
 import { useQuery } from "react-query";
 import AtomCarrousel from "../../@atoms/AtomCarrousel";
@@ -106,22 +112,50 @@ const ModuleProducts: FC<Props> = (props) => {
                         height="220px"
                       />
                     </AtomWrapper>
+                    <AtomWrapper
+                      flexDirection="row"
+                      customCSS={() => css`
+                        display: grid;
+                        grid-template-columns: 1fr auto;
+                      `}
+                    >
+                      <AtomText
+                        customCSS={() => css`
+                          font-family: Inter;
+                          font-weight: 600;
+                          font-size: 14px;
+                          display: -webkit-box;
+                          -webkit-line-clamp: 2;
+                          -webkit-box-orient: vertical;
+                          overflow: hidden;
+                          height: 47px;
+                          @media (max-width: 980px) {
+                            text-align: center;
+                          }
+                        `}
+                      >
+                        {item.title}
+                      </AtomText>
+                      <AtomText
+                        customCSS={() => css`
+                          font-family: Inter;
+                          font-weight: 600;
+                          font-size: 17px;
+                          @media (max-width: 980px) {
+                            text-align: center;
+                          }
+                        `}
+                      >
+                        {NumberWithCommas(item.price, { prefix: "$" })}
+                      </AtomText>
+                    </AtomWrapper>
                     <AtomText
                       customCSS={() => css`
                         font-family: Inter;
-                        font-weight: 600;
-                        font-size: 17px;
-                        display: -webkit-box;
-                        -webkit-line-clamp: 2;
-                        -webkit-box-orient: vertical;
-                        overflow: hidden;
-                        height: 51px;
-                        @media (max-width: 980px) {
-                          text-align: center;
-                        }
+                        font-size: 14px;
                       `}
                     >
-                      {item.title}
+                      raiting {item.rating?.rate}
                     </AtomText>
                     <AtomText
                       customCSS={() => css`

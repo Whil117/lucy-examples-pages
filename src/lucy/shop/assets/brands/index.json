@@ -1,0 +1,42 @@
+[
+    {
+        "id": "d648d020-0e6c-4668-a2fd-b287a8e0586d",
+        "label": "Staples",
+        "image": "https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e8c4e560afc2c49da53521_brand%20(3)-min.png"
+    },
+    {
+        "id": "93a1d74c-f891-4771-9c1f-8ab405389355",
+        "label": "Sprouts",
+        "image": "https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e8c4e58b497e41aa46b801_brand%20(8)-min.png"
+    },
+    {
+        "id": "52fcbe12-b997-4261-87dd-a15392f17647",
+        "label": "Grocery outlet",
+        "image": "https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e8c4e5eaf8533b0958cefe_brand%20(5)-min.png"
+    },
+    {
+        "id": "8f852530-c22d-40c9-b9ad-74675d3f3f48",
+        "label": "Mollie stones",
+        "image": "https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e8c4e454ac2e9d497cb531_brand%20(6)-min.png"
+    },
+    {
+        "id": "faf3c886-39d3-4cb6-9542-bb8e8bd98b0a",
+        "label": "Sports Basement",
+        "image": "https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e8c4e4707380971125e685_brand%20(4)-min.png"
+    },
+    {
+        "id": "5f48e966-67fd-4c3b-a947-78e3248a3f0c",
+        "label": "Container Store",
+        "image": "https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e8c4e460afc2193aa53511_brand%20(2)-min.png"
+    },
+    {
+        "id": "3707fc38-5838-4363-bb43-478e72d4e719",
+        "label": "Target",
+        "image": "https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e8c4e4c21faa5e03c209c5_brand%20(1)-min.png"
+    },
+    {
+        "id": "771149dc-30a2-4154-a876-2b3bcbc273df",
+        "label": "Bevmo!",
+        "image": "https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e8c4e51eb4ad92a3e75673_brand%20(7)-min.png"
+    }
+]
