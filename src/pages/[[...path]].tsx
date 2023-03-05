@@ -6,7 +6,8 @@ import { atomWithStorage } from "jotai/utils";
 import { AtomButton, AtomInput, AtomLoader, AtomWrapper } from "lucy-nxtjs";
 import { GetServerSideProps } from "next";
 import dynamic from "next/dynamic";
-import { FC, ReactNode } from "react";
+import { FC, memo, ReactNode, useEffect, useState } from "react";
+import { BrowserRouter } from "react-router-dom";
 
 type Props = {
   children?: ReactNode;
@@ -25,7 +26,7 @@ export const ProjectIdAtom = atomWithStorage(
 );
 
 const BrowserRoutesStatic = dynamic(() => import("@/lucy/routes.lucy"), {
-  ssr: false,
+  ssr: true,
   loading: () => <AtomLoader type="fullscreen" colorLoad="#202020" isLoading />,
 });
 
@@ -33,6 +34,18 @@ const DynamicPage: FC<Props> = ({ hostname }) => {
   const { AllRoutes, router } = useProject();
 
   const [projectId, setProjectId] = useAtom(ProjectIdAtom);
+
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
+
+  // Solo se ejecuta en el navegador
   return (
     <AtomWrapper
       backgroundColor="#fafbfc"
@@ -40,7 +53,9 @@ const DynamicPage: FC<Props> = ({ hostname }) => {
       justifyContent="flex-start"
       alignItems="flex-start"
     >
-      <BrowserRoutesStatic />
+      <BrowserRouter>
+        <BrowserRoutesStatic />
+      </BrowserRouter>
       {isLocalOrURL.includes(hostname ?? "") && (
         <AtomWrapper
           maxWidth="max-content"
@@ -112,4 +127,4 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   };
 };
 
-export default DynamicPage;
+export default memo(DynamicPage);

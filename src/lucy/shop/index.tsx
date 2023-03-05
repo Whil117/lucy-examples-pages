@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 import { Route, Routes } from "react-router-dom";
 import LayoutShop from "./layout";
 import HomeLandingRamotion from "./pages/home";
@@ -16,4 +16,4 @@ const ShopRoutes: FC<Props> = ({ path }) => {
   );
 };
 
-export default ShopRoutes;
+export default memo(ShopRoutes);
