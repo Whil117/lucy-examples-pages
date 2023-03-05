@@ -21,61 +21,6 @@ type IAllProducts = {
   };
 };
 
-import { useState } from "react";
-
-function Carrusel() {
-  const [translateX, setTranslateX] = useState(0);
-
-  const handlePrev = () => {
-    setTranslateX(translateX + 100);
-  };
-
-  const handleNext = () => {
-    setTranslateX(translateX - 100);
-  };
-
-  return (
-    <AtomWrapper
-      customCSS={() => css`
-        display: flex;
-        overflow: hidden;
-      `}
-    >
-      <div
-        className="carrusel-items"
-        style={{ transform: `translateX(${translateX}%)` }}
-      >
-        <AtomWrapper
-          customCSS={() => css`
-            flex: 0 0 100%;
-            transition: transform 0.3s ease-in-out;
-          `}
-        >
-          Item 1
-        </AtomWrapper>
-        <AtomWrapper
-          customCSS={() => css`
-            flex: 0 0 100%;
-            transition: transform 0.3s ease-in-out;
-          `}
-        >
-          Item 2
-        </AtomWrapper>
-        <AtomWrapper
-          customCSS={() => css`
-            flex: 0 0 100%;
-            transition: transform 0.3s ease-in-out;
-          `}
-        >
-          Item 3
-        </AtomWrapper>
-      </div>
-      <button onClick={handlePrev}>Anterior</button>
-      <button onClick={handleNext}>Siguiente</button>
-    </AtomWrapper>
-  );
-}
-
 const ModuleProducts: FC<Props> = (props) => {
   const { isLoading, error, data } = useQuery<IAllProducts[]>("products", () =>
     fetch("https://fakestoreapi.com/products").then((res) => res.json())
@@ -141,11 +86,17 @@ const ModuleProducts: FC<Props> = (props) => {
                     justify-content: center;
                     align-items: center;
                   }
+                  gap: 10px;
                 `}
                 id="content"
               >
                 {data?.map((item) => (
-                  <AtomWrapper key={item.id} width="320px" alignItems="center">
+                  <AtomWrapper
+                    key={item.id}
+                    width="320px"
+                    alignItems="flex-start"
+                    gap="10px"
+                  >
                     <AtomWrapper alignItems="center" justifyContent="center">
                       <AtomImage
                         src={item.image}
@@ -172,6 +123,33 @@ const ModuleProducts: FC<Props> = (props) => {
                     >
                       {item.title}
                     </AtomText>
+                    <AtomText
+                      customCSS={() => css`
+                        font-family: Inter;
+                        font-size: 14px;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        height: 45px;
+                        @media (max-width: 980px) {
+                          text-align: center;
+                        }
+                      `}
+                    >
+                      {item.description}
+                    </AtomText>
+                    <AtomButton
+                      customCSS={() => css`
+                        font-family: Inter;
+                        font-weight: 500;
+                        font-size: 12px;
+                        z-index: 1;
+                        align-items: center;
+                      `}
+                    >
+                      Add to cart
+                    </AtomButton>
                   </AtomWrapper>
                 ))}
               </AtomWrapper>
@@ -192,94 +170,6 @@ const ModuleProducts: FC<Props> = (props) => {
               >
                 NEXT
               </AtomButton>
-            </AtomWrapper>
-          )}
-        </AtomCarrousel>
-        <AtomCarrousel
-          limit={2}
-          breakpoints={{
-            800: {
-              limit: 1,
-              customCSS: () => css``,
-            },
-          }}
-        >
-          {({ handleNext, handleBack }) => (
-            <AtomWrapper
-              flexDirection="column"
-              alignItems="center"
-              customCSS={() => css`
-                position: relative;
-              `}
-            >
-              <AtomWrapper
-                customCSS={() => css`
-                  flex-direction: row;
-                  justify-content: center;
-                `}
-                id="content"
-              >
-                {data?.map((item) => (
-                  <AtomWrapper key={item.id} width="320px">
-                    <AtomWrapper alignItems="center" justifyContent="center">
-                      <AtomImage
-                        src={item.image}
-                        alt=""
-                        width="220px"
-                        objectFit="contain"
-                        height="220px"
-                      />
-                    </AtomWrapper>
-                    <AtomText
-                      customCSS={() => css`
-                        font-family: Inter;
-                        font-weight: 600;
-                        font-size: 17px;
-                        display: -webkit-box;
-                        -webkit-line-clamp: 2;
-                        -webkit-box-orient: vertical;
-                        overflow: hidden;
-                      `}
-                    >
-                      {item.title}
-                    </AtomText>
-                  </AtomWrapper>
-                ))}
-              </AtomWrapper>
-              <AtomWrapper alignItems="center" flexDirection="row" gap="20px">
-                <AtomButton
-                  onClick={handleBack}
-                  customCSS={() => css`
-                    font-family: Inter;
-                    font-weight: 500;
-                    font-size: 12px;
-                    top: auto;
-                    z-index: 1;
-                    left: 0;
-                    align-items: center;
-                    bottom: auto;
-                  `}
-                  backgroundColor="#003d29"
-                >
-                  BACK
-                </AtomButton>
-                <AtomButton
-                  onClick={handleNext}
-                  customCSS={() => css`
-                    font-family: Inter;
-                    font-weight: 500;
-                    font-size: 12px;
-                    top: auto;
-                    z-index: 1;
-                    right: 0;
-                    align-items: center;
-                    bottom: auto;
-                  `}
-                  backgroundColor="#003d29"
-                >
-                  NEXT
-                </AtomButton>
-              </AtomWrapper>
             </AtomWrapper>
           )}
         </AtomCarrousel>
