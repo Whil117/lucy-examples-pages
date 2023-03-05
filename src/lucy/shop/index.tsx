@@ -7,6 +7,8 @@ type Props = {
 };
 
 const ShopRoutes: FC<Props> = ({ path }) => {
+  console.log({ path });
+
   return (
     <LayoutShop>
       <Routes location={path}>

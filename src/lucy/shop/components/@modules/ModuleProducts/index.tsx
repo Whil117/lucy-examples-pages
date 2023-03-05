@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 import { AtomButton, AtomImage, AtomText, AtomWrapper } from "lucy-nxtjs";
-import { FC, ReactNode } from "react";
+import { FC, memo, ReactNode } from "react";
 import { useQuery } from "react-query";
 import AtomCarrousel from "../../@atoms/AtomCarrousel";
 
@@ -178,4 +178,4 @@ const ModuleProducts: FC<Props> = (props) => {
   );
 };
 
-export default ModuleProducts;
+export default memo(ModuleProducts);

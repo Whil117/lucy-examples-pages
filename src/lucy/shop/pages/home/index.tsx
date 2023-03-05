@@ -1,30 +1,13 @@
 import { css } from "@emotion/react";
 import { AtomButton, AtomImage, AtomText, AtomWrapper } from "lucy-nxtjs";
-import { FC, ReactNode } from "react";
-import { useQuery } from "react-query";
+import { FC, memo, ReactNode } from "react";
 import ModuleProducts from "../../components/@modules/ModuleProducts";
 
 type Props = {
   children?: ReactNode;
 };
 
-type IAllProducts = {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  image: string;
-  rating: {
-    rate: number;
-    count: number;
-  };
-};
-
 const HomeShopPage: FC<Props> = (props) => {
-  const { isLoading, error, data } = useQuery<IAllProducts[]>("products", () =>
-    fetch("https://fakestoreapi.com/products").then((res) => res.json())
-  );
   return (
     <AtomWrapper alignItems="center" gap="100px" margin="0px 0px 100px 0px">
       <AtomWrapper
@@ -292,4 +275,4 @@ const AllCategories = [
   },
 ];
 
-export default HomeShopPage;
+export default memo(HomeShopPage);

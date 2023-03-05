@@ -41,14 +41,15 @@ const chooseTypeProject = (
 const useProject = (): UseProjectProps => {
   const router = useRouter() as RouterWithComponents;
 
+  const pageProps = router.components?.["/[[...path]]"]?.props?.pageProps;
+
+  const hostname = pageProps?.hostname;
+  const path = pageProps?.path;
+
   const projectId = useAtomValue(ProjectIdAtom);
+  const isHost = isLocalOrURL?.includes(hostname);
+
   return useMemo(() => {
-    const pageProps = router.components?.["/[[...path]]"]?.props?.pageProps;
-
-    const hostname = pageProps?.hostname;
-    const path = pageProps?.path;
-
-    const isHost = isLocalOrURL?.includes(hostname);
     const findProject = chooseTypeProject(isHost, projectId, hostname);
 
     return {
