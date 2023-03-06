@@ -9,7 +9,7 @@ const WhilRoutes = dynamic(() => import("."), {
 
 const WhilConfig: RoutesConfig = {
   name: "Whil",
-  prod: "lucy-examples-whil.vercel.app",
+  prod: "whil.vercel.app",
   dev: "197190f5-0f4b-44e3-9019-9ff951b8e8c0",
   routes: WhilRoutes,
 };
