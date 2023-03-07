@@ -1,11 +1,16 @@
 import { css } from "@emotion/react";
 import { AtomButton, AtomText, AtomWrapper } from "lucy-nxtjs";
 import { FC, memo, ReactNode } from "react";
+import ModuleBestSelling from "../../components/@modules/ModuleBestSelling";
 import ModuleBrands from "../../components/@modules/ModuleBrands";
 import ModuleCategories from "../../components/@modules/ModuleCategories";
+import ModuleFilterProduct from "../../components/@modules/ModuleFilterProducts";
 import ModuleGetCash from "../../components/@modules/ModuleGetCash";
 import ModuleGetUpToOff from "../../components/@modules/ModuleGetUpToOff";
-import ModuleProducts from "../../components/@modules/ModuleProducts";
+import ModuleLine from "../../components/@modules/ModuleLine";
+import WithFilterProducts from "../../components/@modules/ModuleProducts";
+import ModuleServiceHelp from "../../components/@modules/ModuleServiceHelp";
+import ModuleTrendingProducts from "../../components/@modules/ModuleTrending";
 
 type Props = {
   children?: ReactNode;
@@ -47,13 +52,17 @@ const HomeShopPage: FC<Props> = () => {
           </AtomButton>
         </AtomWrapper>
       </AtomWrapper>
-
       <ModuleCategories />
 
-      <ModuleProducts />
+      <WithFilterProducts />
       <ModuleBrands />
       <ModuleGetUpToOff />
       <ModuleGetCash />
+      <ModuleFilterProduct />
+      <ModuleLine />
+      <ModuleTrendingProducts />
+      <ModuleBestSelling />
+      <ModuleServiceHelp />
     </AtomWrapper>
   );
 };

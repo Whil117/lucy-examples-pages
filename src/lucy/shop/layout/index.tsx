@@ -2,6 +2,7 @@ import { css } from "@emotion/react";
 import { AtomWrapper } from "lucy-nxtjs";
 import { FC, ReactNode } from "react";
 import ModuleHeaderShop from "../components/@modules/ModuleHeader";
+import LayoutFooter from "../components/layout/footer";
 
 type Props = {
   children?: ReactNode;
@@ -20,6 +21,7 @@ const LayoutShop: FC<Props> = ({ children }) => {
     >
       <ModuleHeaderShop />
       {children}
+      <LayoutFooter />
     </AtomWrapper>
   );
 };
