@@ -1,16 +1,16 @@
+import ModuleBestSelling from "@/lucy/shop/components/@modules/ModuleBestSelling";
+import ModuleBrands from "@/lucy/shop/components/@modules/ModuleBrands";
+import ModuleCategories from "@/lucy/shop/components/@modules/ModuleCategories";
+import ModuleFilterProduct from "@/lucy/shop/components/@modules/ModuleFilterProducts";
+import ModuleGetCash from "@/lucy/shop/components/@modules/ModuleGetCash";
+import ModuleGetUpToOff from "@/lucy/shop/components/@modules/ModuleGetUpToOff";
+import ModuleLine from "@/lucy/shop/components/@modules/ModuleLine";
+import WithFilterProducts from "@/lucy/shop/components/@modules/ModuleProducts";
+import ModuleServiceHelp from "@/lucy/shop/components/@modules/ModuleServiceHelp";
+import ModuleTrendingProducts from "@/lucy/shop/components/@modules/ModuleTrending";
 import { css } from "@emotion/react";
 import { AtomButton, AtomText, AtomWrapper } from "lucy-nxtjs";
 import { FC, memo, ReactNode } from "react";
-import ModuleBestSelling from "../../components/@modules/ModuleBestSelling";
-import ModuleBrands from "../../components/@modules/ModuleBrands";
-import ModuleCategories from "../../components/@modules/ModuleCategories";
-import ModuleFilterProduct from "../../components/@modules/ModuleFilterProducts";
-import ModuleGetCash from "../../components/@modules/ModuleGetCash";
-import ModuleGetUpToOff from "../../components/@modules/ModuleGetUpToOff";
-import ModuleLine from "../../components/@modules/ModuleLine";
-import WithFilterProducts from "../../components/@modules/ModuleProducts";
-import ModuleServiceHelp from "../../components/@modules/ModuleServiceHelp";
-import ModuleTrendingProducts from "../../components/@modules/ModuleTrending";
 
 type Props = {
   children?: ReactNode;
@@ -26,9 +26,21 @@ const HomeShopPage: FC<Props> = () => {
           min-height: 620px;
           background-color: #dddddd;
           background-image: url(https://res.cloudinary.com/whil/image/upload/v1677559261/BANNER_bzjcwn.png);
+          @media (max-width: 980px) {
+            background-image: none;
+          }
         `}
       >
-        <AtomWrapper maxWidth="1440px" padding="0px 90px" gap="20px">
+        <AtomWrapper
+          maxWidth="1440px"
+          padding="0px 90px"
+          gap="20px"
+          customCSS={() => css`
+            @media (max-width: 980px) {
+              padding: 0px 30px;
+            }
+          `}
+        >
           <AtomText
             fontFamily="Inter"
             color="#003d29"

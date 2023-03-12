@@ -14,6 +14,12 @@ const ModuleBestSelling: FC<Props> = (props) => {
       maxWidth="1440px"
       padding="0px 90px"
       gap="20px"
+      customCSS={() => css`
+        @media (max-width: 980px) {
+          flex-wrap: wrap;
+          padding: 0px 30px;
+        }
+      `}
     >
       <AtomText
         customCSS={() => css`
@@ -24,7 +30,15 @@ const ModuleBestSelling: FC<Props> = (props) => {
       >
         Best Selling Store
       </AtomText>
-      <AtomWrapper flexDirection="row" gap="20px">
+      <AtomWrapper
+        flexDirection="row"
+        gap="20px"
+        customCSS={() => css`
+          @media (max-width: 980px) {
+            flex-wrap: wrap;
+          }
+        `}
+      >
         {Stores?.map((item) => (
           <AtomWrapper key={item.id}>
             <AtomImage

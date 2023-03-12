@@ -27,6 +27,11 @@ const WithFilterProducts: FC<Props> = (props) => {
       flexWrap="wrap"
       justifyContent="space-between"
       minHeight="320px"
+      customCSS={() => css`
+        @media (max-width: 980px) {
+          justify-content: center;
+        }
+      `}
     >
       {isLoading ? (
         <AtomLoader

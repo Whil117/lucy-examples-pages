@@ -14,6 +14,11 @@ const ModuleTrendingProducts: FC<Props> = (props) => {
       maxWidth="1440px"
       padding="0px 90px"
       gap="20px"
+      customCSS={() => css`
+        @media (max-width: 980px) {
+          padding: 0px 30px;
+        }
+      `}
     >
       <AtomText
         customCSS={() => css`
@@ -24,7 +29,15 @@ const ModuleTrendingProducts: FC<Props> = (props) => {
       >
         Trending Products For You!
       </AtomText>
-      <AtomWrapper flexDirection="row" gap="20px">
+      <AtomWrapper
+        flexDirection="row"
+        gap="20px"
+        customCSS={() => css`
+          @media (max-width: 980px) {
+            flex-wrap: wrap;
+          }
+        `}
+      >
         {TrendingProducts?.map((item) => (
           <AtomWrapper
             key={item.id}

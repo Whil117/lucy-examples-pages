@@ -25,7 +25,7 @@ const Links = [
   },
 ];
 
-const ModuleHeaderShop: FC<Props> = (props) => {
+const ModuleHeaderShop: FC<Props> = () => {
   return (
     <AtomWrapper>
       <AtomWrapper
@@ -33,6 +33,11 @@ const ModuleHeaderShop: FC<Props> = (props) => {
         padding="10px 15px"
         flexDirection="row"
         justifyContent="space-between"
+        customCSS={() => css`
+          @media (max-width: 980px) {
+            display: none;
+          }
+        `}
       >
         <AtomText fontFamily="Inter" color="white">
           +001234567890
@@ -59,6 +64,11 @@ const ModuleHeaderShop: FC<Props> = (props) => {
           justifyContent="space-between"
           maxWidth="1440px"
           padding="0px 90px"
+          customCSS={() => css`
+            @media (max-width: 980px) {
+              padding: 0px 30px;
+            }
+          `}
         >
           <AtomWrapper width="auto">
             <AtomImage
@@ -72,6 +82,11 @@ const ModuleHeaderShop: FC<Props> = (props) => {
             width="auto"
             height="auto"
             gap="25px"
+            customCSS={() => css`
+              @media (max-width: 980px) {
+                display: none;
+              }
+            `}
           >
             {Links?.map((item) => (
               <AtomText key={item.id} fontFamily="Inter">
@@ -79,7 +94,14 @@ const ModuleHeaderShop: FC<Props> = (props) => {
               </AtomText>
             ))}
           </AtomWrapper>
-          <AtomWrapper width="auto">
+          <AtomWrapper
+            width="auto"
+            customCSS={() => css`
+              @media (max-width: 980px) {
+                display: none;
+              }
+            `}
+          >
             <AtomInput
               type="text"
               placeholder="Search Product"
@@ -93,6 +115,11 @@ const ModuleHeaderShop: FC<Props> = (props) => {
             width="auto"
             height="auto"
             gap="25px"
+            customCSS={() => css`
+              @media (max-width: 980px) {
+                display: none;
+              }
+            `}
           >
             <AtomText fontFamily="Inter">Account</AtomText>
             <AtomText fontFamily="Inter">Cart</AtomText>

@@ -24,6 +24,11 @@ const ModuleGetCash: FC<Props> = (props) => {
         padding="0px 90px"
         alignItems="flex-end"
         gap="20px"
+        customCSS={() => css`
+          @media (max-width: 980px) {
+            padding: 0px 30px;
+          }
+        `}
       >
         <AtomWrapper
           backgroundColor="#003d29"
@@ -31,6 +36,12 @@ const ModuleGetCash: FC<Props> = (props) => {
           height="480px"
           padding="30px"
           justifyContent="space-around"
+          customCSS={() => css`
+            @media (max-width: 980px) {
+              width: 100%;
+              max-width: fit-content;
+            }
+          `}
         >
           <AtomText
             customCSS={() => css`

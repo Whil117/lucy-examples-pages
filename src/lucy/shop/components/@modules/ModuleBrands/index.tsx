@@ -15,6 +15,11 @@ const ModuleBrands: FC<Props> = () => {
       maxWidth="1440px"
       padding="0px 90px"
       gap="20px"
+      customCSS={() => css`
+        @media (max-width: 980px) {
+          padding: 0px 30px;
+        }
+      `}
     >
       <AtomText
         customCSS={() => css`
@@ -33,6 +38,11 @@ const ModuleBrands: FC<Props> = () => {
           display: grid;
           grid-template-columns: repeat(4, minmax(200px, 1fr));
           gap: 20px;
+          @media (max-width: 980px) {
+            flex-wrap: wrap;
+            display: flex;
+            flex-direction: row;
+          }
         `}
       >
         {ChooseByBrand?.map((item) => (
@@ -47,6 +57,9 @@ const ModuleBrands: FC<Props> = () => {
               justify-content: center;
               padding: 20px;
               gap: 20px;
+              @media (max-width: 980px) {
+                width: 100%;
+              }
             `}
           >
             <AtomImage

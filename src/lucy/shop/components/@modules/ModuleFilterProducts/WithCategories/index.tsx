@@ -20,7 +20,18 @@ const WithCategories: FC<Props> = (props) => {
   const [query, setQuery] = useAtom(QUERY_SEARCH_ATOM);
 
   return (
-    <AtomWrapper flexDirection="row" width="auto" gap="20px">
+    <AtomWrapper
+      flexDirection="row"
+      width="auto"
+      gap="20px"
+      customCSS={() => css`
+        @media (max-width: 980px) {
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          gap: 10px;
+        }
+      `}
+    >
       {data?.map((item) => (
         <AtomButton
           key={item}

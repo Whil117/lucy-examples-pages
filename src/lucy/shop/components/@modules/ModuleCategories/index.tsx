@@ -14,6 +14,11 @@ const ModuleCategories: FC<Props> = () => {
       maxWidth="1440px"
       padding="0px 90px"
       gap="20px"
+      customCSS={() => css`
+        @media (max-width: 980px) {
+          padding: 0px 30px;
+        }
+      `}
     >
       <AtomText
         customCSS={() => css`
@@ -28,6 +33,13 @@ const ModuleCategories: FC<Props> = () => {
         flexDirection="row"
         alignItems="center"
         justifyContent="space-between"
+        flexWrap="wrap"
+        customCSS={() => css`
+          gap: 20px;
+          @media (max-width: 980px) {
+            justify-content: center;
+          }
+        `}
       >
         {AllCategories?.map((item) => (
           <AtomWrapper
@@ -35,6 +47,9 @@ const ModuleCategories: FC<Props> = () => {
             width="auto"
             customCSS={() => css`
               position: relative;
+              @media (max-width: 980px) {
+                width: 100%;
+              }
             `}
           >
             <AtomImage
@@ -45,6 +60,9 @@ const ModuleCategories: FC<Props> = () => {
                   height: 280px;
                   object-fit: cover;
                   border-radius: 15px;
+                  @media (max-width: 980px) {
+                    width: 100%;
+                  }
                 }
               `}
             />

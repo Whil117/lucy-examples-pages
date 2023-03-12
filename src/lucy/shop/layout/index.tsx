@@ -1,8 +1,8 @@
 import { css } from "@emotion/react";
 import { AtomWrapper } from "lucy-nxtjs";
 import { FC, ReactNode } from "react";
-import ModuleHeaderShop from "../components/@modules/ModuleHeader";
 import LayoutFooter from "../components/layout/footer";
+import ModuleHeaderShop from "../components/layout/header";
 
 type Props = {
   children?: ReactNode;

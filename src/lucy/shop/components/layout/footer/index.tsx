@@ -17,7 +17,14 @@ const LayoutFooter: FC<Props> = (props) => {
         gap="20px"
         customCSS={() => css`
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
+          grid-template-columns: 1fr repeat(4, 0.4fr);
+          margin-bottom: 100px;
+          @media (max-width: 980px) {
+            padding: 0px 30px;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 50px;
+          }
         `}
       >
         <AtomWrapper gap="5px">
@@ -80,7 +87,30 @@ const LayoutFooter: FC<Props> = (props) => {
             ))}
           </AtomWrapper>
         </AtomWrapper>
-        <AtomWrapper></AtomWrapper>
+        {DepartamentLinks?.map((item) => (
+          <AtomWrapper key={item?.label}>
+            <AtomText
+              customCSS={() => css`
+                font-family: Inter;
+                font-weight: bold;
+              `}
+            >
+              {item.label}
+            </AtomText>
+            <AtomWrapper justifyContent="flex-start">
+              {item?.list?.map((item) => (
+                <AtomText
+                  key={item.id}
+                  customCSS={() => css`
+                    font-family: Inter;
+                  `}
+                >
+                  {item.label}
+                </AtomText>
+              ))}
+            </AtomWrapper>
+          </AtomWrapper>
+        ))}
       </AtomWrapper>
     </AtomWrapper>
   );
@@ -88,32 +118,132 @@ const LayoutFooter: FC<Props> = (props) => {
 
 const DepartamentLinks = [
   {
-    id: "dd32mc",
-    label: "Fashion",
+    label: "Department",
+    list: [
+      {
+        id: "dd32mc",
+        label: "Fashion",
+      },
+      {
+        id: "5cnd",
+        label: "Education Product",
+      },
+      {
+        id: "4nca",
+        label: "Frozen Food",
+      },
+      {
+        id: "91nmd",
+        label: "Beverages",
+      },
+      {
+        id: "dkfm1",
+        label: "Organic Grocery",
+      },
+      {
+        id: "0mde",
+        label: "Office Supplies",
+      },
+      {
+        id: "84ddna",
+        label: "Beauty Products",
+      },
+    ],
   },
   {
-    id: "5cnd",
-    label: "Education Product",
+    label: "About Us",
+    list: [
+      {
+        id: "asd3r",
+        label: "About Shopcart",
+      },
+      {
+        id: "xair",
+        label: "Careers",
+      },
+      {
+        id: "inrd",
+        label: "New & Blog",
+      },
+      {
+        id: "Help",
+        label: "Help",
+      },
+      {
+        id: "iun1d",
+        label: "Press Center",
+      },
+      {
+        id: "$inew",
+        label: "Shop By Location",
+      },
+      {
+        id: "$nasc",
+        label: "Shopcart Brands",
+      },
+      {
+        id: "knas",
+        label: "Affiliate & Partners",
+      },
+      {
+        id: "89nda",
+        label: "Ideas & Guides",
+      },
+    ],
   },
   {
-    id: "4nca",
-    label: "Frozen Food",
+    label: "Services",
+    list: [
+      {
+        id: "Gift Card",
+        label: "Gift Card",
+      },
+      {
+        id: "iasdnf33",
+        label: "Mobile App",
+      },
+      {
+        id: "1und",
+        label: "Shipping & Delivery",
+      },
+      {
+        id: "84h",
+        label: "Order Pickup",
+      },
+      {
+        id: "8dna",
+        label: "Account Signup",
+      },
+    ],
   },
   {
-    id: "91nmd",
-    label: "Beverages",
-  },
-  {
-    id: "dkfm1",
-    label: "Organic Grocery",
-  },
-  {
-    id: "0mde",
-    label: "Office Supplies",
-  },
-  {
-    id: "84ddna",
-    label: "Beauty Products",
+    label: "Help",
+    list: [
+      {
+        id: "nsdsa",
+        label: "Shopcart Help",
+      },
+      {
+        id: "i12nasd",
+        label: "Returns",
+      },
+      {
+        id: "912hj3",
+        label: "Track Orders",
+      },
+      {
+        id: "i91ed",
+        label: "Contact Us",
+      },
+      {
+        id: "9jsadf",
+        label: "Feedback",
+      },
+      {
+        id: "91121",
+        label: "Security & Fraud",
+      },
+    ],
   },
 ];
 

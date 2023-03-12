@@ -24,9 +24,15 @@ const ModuleLine: FC<Props> = () => {
         alignItems="center"
         customCSS={() => css`
           background-color: #ffe6cc;
+          @media (max-width: 980px) {
+            padding: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+          }
         `}
       >
-        <AtomWrapper>
+        <AtomWrapper width="auto">
           <AtomText
             customCSS={() => css`
               font-family: Inter;
